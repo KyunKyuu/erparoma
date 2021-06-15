@@ -98,7 +98,11 @@ $(document).ready(function() {
                 Swal.close();
                 $(modal).modal()
                 for (const [key, value] of Object.entries(res.value)) {
-                    $(`form.updateForm input[name="${key}"]`).val(value)
+                    if (key.substr(key.length - 3) == '_id') {
+                        $(`form.updateForm select[name="${key}"] option[value="${value}"]`).attr('selected', true)
+                    }else{
+                        $(`form.updateForm input[name="${key}"]`).val(value)
+                    }
                 }
             },
             error:err=>{

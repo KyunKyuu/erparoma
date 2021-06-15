@@ -12,6 +12,15 @@
         <div class="modal-body">
             <div class="col-md-12">
                 <form class="updateForm" data-url="/api/v1/menu/update" data-method="post">
+                    <div class="form-group">
+                        <label class="text-capitalize" for="section_id">section</label>
+                        <select name="section_id" class="form-control" required >
+                            <option value disabled selected>== Pilih Section ==</option>
+                            @foreach ($section as $item)
+                                <option value="{{$item->id}}">{{$item->section_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                   <div class="form-group">
                       <label class="text-capitalize" for="menu_name">menu name</label>
                       <input type="text" name="menu_name" class="form-control" required >
