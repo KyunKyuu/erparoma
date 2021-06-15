@@ -6,9 +6,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Menu</h3>
+                    <h3 class="card-title">Data Section</h3>
                     <div class="card-tools">
-                        <a href="#" data-toggle="modal" data-target="#insertMenu" class="badge badge-primary p-2">Tambah <i class="fas fa-plus"></i></a>
+                        <a href="#" data-toggle="modal" data-target="#insertSection" class="badge badge-primary p-2">Tambah <i class="fas fa-plus"></i></a>
                     </div>
                 </div>
                 <!-- /.card-header -->
@@ -16,10 +16,9 @@
                     <table class="table table-hover " id="table">
                         <thead>
                             <tr>
-                                <th style="width:10%">Menu</th>
+                                <th style="width:10%">Section</th>
                                 <th>Status</th>
-                                <th>Created By</th>
-                                <th>Url</th>
+                                <th>Createds By</th>
                                 <th>Description</th>
                                 <th>Created At</th>
                                 <th>Action</th>
@@ -35,8 +34,8 @@
         </div>
     </div>
 
-    @include('main.dashboard.menu.additional.modal_insert')
-    @include('main.dashboard.menu.additional.modal_update')
+    @include('main.dashboard.section.additional.modal_insert')
+    @include('main.dashboard.section.additional.modal_update')
 
 
 @endsection
