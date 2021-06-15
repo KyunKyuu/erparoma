@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\SectionController as ApiSectionController;
 use App\Http\Controllers\Ex\IndexController;
 use App\Http\Controllers\Views\MenuController;
 use App\Http\Controllers\Views\SectionController;
+use App\Http\Controllers\Views\UserController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::get('/', function () {
 Route::prefix('master')->group(function () {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('section', [SectionController::class, 'index'])->name('section.index');
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
 });
 
 Route::get('home', [IndexController::class, 'home'])->name('index.home');
