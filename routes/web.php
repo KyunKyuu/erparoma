@@ -23,9 +23,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// VIEW
+
+Route::prefix('master')->group(function () {
+    Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
+    Route::get('section', [SectionController::class, 'index'])->name('section.index');
+});
+
 Route::get('home', [IndexController::class, 'home'])->name('index.home');
-Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
-Route::get('section', [SectionController::class, 'index'])->name('section.index');
 
 
 // API

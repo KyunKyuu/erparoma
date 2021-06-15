@@ -54,7 +54,7 @@
 <script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="/assets/plugins/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
 
-<script src="/assets/config/{{request()->segment(1)}}/script.js"></script>
+<script src="/assets/config/{{request()->segment(2)}}/script.js"></script>
 
 
 <script>
