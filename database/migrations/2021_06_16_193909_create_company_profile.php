@@ -20,7 +20,7 @@ class CreateCompanyProfile extends Migration
             $table->char('npwp_number');
             $table->string('address_1');
             $table->string('address_2');
-            $table->varchar('email');
+            $table->string('email');
             $table->char('telepon_1');
             $table->char('telepon_2');
             $table->char('fax');
@@ -32,8 +32,8 @@ class CreateCompanyProfile extends Migration
             $table->int('village_id');
             $table->char('bank_name');
             $table->char('bank_rekening_number');
-            $table->varchar('bank_owner');
-            $table->varchar('photo');
+            $table->string('bank_owner');
+            $table->string('photo');
             $table->char('created_by');
             $table->enum('status', [1, 0]);
             $table->timestamp('deleted_at')->nullable();

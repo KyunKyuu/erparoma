@@ -20,9 +20,9 @@ class CreateEmployee extends Migration
             $table->string('birth_place');
             $table->date('birth');
             $table->enum('status_maried_id', [1, 0]);
-            $table->char('string');
+            $table->char('religion');
             $table->string('address');
-            $table->varchar('email');
+            $table->string('email');
             $table->char('telepon');
             $table->char('postal_code');
             $table->char('country');
@@ -36,8 +36,8 @@ class CreateEmployee extends Migration
             $table->int('clasification_id');
             $table->char('bank_name');
             $table->char('bank_rekening_number');
-            $table->varchar('bank_owner');
-            $table->varchar('photo');
+            $table->string('bank_owner');
+            $table->string('photo');
             $table->char('created_by');
             $table->enum('status', [1, 0]);
             $table->timestamp('deleted_at')->nullable();

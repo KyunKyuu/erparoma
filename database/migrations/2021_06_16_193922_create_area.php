@@ -15,7 +15,7 @@ class CreateArea extends Migration
     {
         Schema::create('area', function (Blueprint $table) {
             $table->id();
-            $table->tring('area_name');
+            $table->string('area_name');
             $table->char('created_by');
             $table->enum('status', [1, 0]);
             $table->timestamp('deleted_at')->nullable();
