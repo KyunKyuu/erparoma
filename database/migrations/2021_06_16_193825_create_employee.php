@@ -38,8 +38,8 @@ class CreateEmployee extends Migration
             $table->char('bank_rekening_number');
             $table->varchar('bank_owner');
             $table->varchar('photo');
-            $table->string('created_by');
-            $table->integer('status');
+            $table->char('created_by');
+            $table->enum('status', [1, 0]);
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();

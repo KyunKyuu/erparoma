@@ -15,7 +15,14 @@ class CreateGroup extends Migration
     {
         Schema::create('group', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('group_name');
+            $table->char('code');
+            $table->char('uom_code');
+            $table->char('created_by');
+            $table->enum('status', [1, 0]);
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 
