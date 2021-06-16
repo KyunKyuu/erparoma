@@ -27,13 +27,13 @@ class MenuController extends Controller
         return DataTables::of($menu)
             ->addColumn('buttons', function ($menu) {
                 return '<div class="btn-group">
-                            <button type="button" class="btn btn-default">
+                            <button type="button" class="btn btn-sm btn-default">
                             <i class="' . $menu->menu_icon . '"></i>
                             </button>
-                            <button type="button" class="btn btn-warning updateItem" data-url="/api/v1/menu/get" data-update="/api/v1/menu/update" data-target="' . $menu->id . '" data-modal="#updateMenu">
+                            <button type="button" class="btn btn-sm btn-warning updateItem" data-url="/api/v1/menu/get" data-update="/api/v1/menu/update" data-target="' . $menu->id . '" data-modal="#updateMenu">
                             <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" class="btn btn-danger deleteItem" data-url="/api/v1/menu/delete" data-target="' . $menu->id . '">
+                            <button type="button" class="btn btn-sm btn-danger deleteItem" data-url="/api/v1/menu/delete" data-target="' . $menu->id . '">
                             <i class="fas fa-trash"></i>
                             </button>
                         </div>';
