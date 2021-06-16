@@ -302,7 +302,7 @@ function Table(data) {
                 columns: data.data,
                 fnDrawCallback: function() {
                     $('.input-toggle').bootstrapToggle({
-                        size:'small',
+                        size:'mini',
                         on:'<i class="fas fa-check"></i> Active',
                         onstyle : 'success',
                         off:'<i class="fas fa-times"></i> Inactive',
@@ -325,7 +325,7 @@ function Table(data) {
                 columns: data.data,
                 fnDrawCallback: function() {
                     $('.input-toggle').bootstrapToggle({
-                        size:'small',
+                        size:'mini',
                         on:'<i class="fas fa-check"></i> Active',
                         onstyle : 'success',
                         off:'<i class="fas fa-times"></i> Inactive',

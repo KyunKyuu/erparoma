@@ -10,7 +10,7 @@ const data = [
 
 const callback = {
     id:'#table .input-toggle',
-    size:'small',
+    size:'mini',
     on:'<i class="fas fa-check"></i>',
     onstyle : 'success',
     off:'<i class="fas fa-times"></i>',
