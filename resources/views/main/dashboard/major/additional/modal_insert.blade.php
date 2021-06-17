@@ -16,14 +16,6 @@
                             <label for="major_name" class="text-capitalize">major Name</label>
                             <input type="text" name="major_name" class="form-control" required>
                         </div>
-                        <div class="form-group">
-                            <label for="major_icon" class="text-capitalize">major Icon</label>
-                            <input type="text" name="major_icon" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="major_desc" class="text-capitalize">major Description</label>
-                            <textarea type="text" name="major_desc" class="form-control"></textarea>
-                        </div>
                 </div>
             </div>
             <div class="modal-footer">
