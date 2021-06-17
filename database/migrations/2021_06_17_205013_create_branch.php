@@ -15,7 +15,15 @@ class CreateBranch extends Migration
     {
         Schema::create('branch', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('branch_name');
+            $table->integer('type_id');
+            $table->string('email');
+            $table->char('telepon');
+            $table->enum('status', [1, 0]);
+            $table->char('created_by');
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

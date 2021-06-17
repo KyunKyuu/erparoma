@@ -15,7 +15,11 @@ class CreateMajors extends Migration
     {
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('major_name');
+            $table->char('created_by');
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 
