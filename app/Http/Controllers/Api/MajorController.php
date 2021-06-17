@@ -23,10 +23,10 @@ class MajorController extends Controller
         return DataTables::of($major)
             ->addColumn('buttons', function ($major) {
                 return '<div class="btn-group">
-                            <button type="button" class="btn btn-warning updateItem" data-url="/api/v1/majors/get" data-update="/api/v1/majors/update" data-target="' . $major->id . '" data-modal="#updateMajor">
+                            <button type="button" class="btn-sm btn btn-warning updateItem" data-url="/api/v1/majors/get" data-update="/api/v1/majors/update" data-target="' . $major->id . '" data-modal="#updateMajor">
                             <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" class="btn btn-danger deleteItem" data-url="/api/v1/majors/delete" data-target="' . $major->id . '">
+                            <button type="button" class="btn-sm btn btn-danger deleteItem" data-url="/api/v1/majors/delete" data-target="' . $major->id . '">
                             <i class="fas fa-trash"></i>
                             </button>
                         </div>';

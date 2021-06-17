@@ -38,7 +38,7 @@ Route::prefix('master')->group(function () {
 
 Route::prefix('hrd')->group(function () {
     Route::get('majors', [MajorController::class, 'index'])->name('major.index');
-    Route::get('divisions', [DivisionControllerler::class, 'index'])->name('division.index');
+    Route::get('divisions', [DivisionController::class, 'index'])->name('division.index');
 });
 
 Route::get('home', [IndexController::class, 'home'])->name('index.home');
@@ -72,10 +72,10 @@ Route::prefix('api/v1')->group(function () {
     });
 
     Route::prefix('divisions')->group(function () {
-        Route::get('get', [ApiDivisionControlleroller::class, 'get'])->name('division.get');
-        Route::post('insert', [ApiDivisionControlleroller::class, 'insert'])->name('division.insert');
-        Route::delete('delete', [ApiDivisionControlleroller::class, 'delete'])->name('division.delete');
-        Route::post('update', [ApiDivisionControlleroller::class, 'update'])->name('division.update');
-        Route::put('change', [ApiDivisionControlleroller::class, 'change'])->name('division.change');
+        Route::get('get', [ApiDivisionController::class, 'get'])->name('division.get');
+        Route::post('insert', [ApiDivisionController::class, 'insert'])->name('division.insert');
+        Route::delete('delete', [ApiDivisionController::class, 'delete'])->name('division.delete');
+        Route::post('update', [ApiDivisionController::class, 'update'])->name('division.update');
+        Route::put('change', [ApiDivisionController::class, 'change'])->name('division.change');
     });
 });

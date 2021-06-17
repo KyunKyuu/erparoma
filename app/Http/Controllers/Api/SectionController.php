@@ -23,13 +23,13 @@ class SectionController extends Controller
         return DataTables::of($section)
             ->addColumn('buttons', function ($section) {
                 return '<div class="btn-group">
-                            <button type="button" class="btn btn-default">
+                            <button type="button" class="btn-sm btn btn-default">
                             <i class="' . $section->icon_add . '"></i>
                             </button>
-                            <button type="button" class="btn btn-warning updateItem" data-url="/api/v1/section/get" data-update="/api/v1/section/update" data-target="' . $section->id . '" data-modal="#updateSection">
+                            <button type="button" class="btn-sm btn btn-warning updateItem" data-url="/api/v1/section/get" data-update="/api/v1/section/update" data-target="' . $section->id . '" data-modal="#updateSection">
                             <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" class="btn btn-danger deleteItem" data-url="/api/v1/section/delete" data-target="' . $section->id . '">
+                            <button type="button" class="btn-sm btn btn-danger deleteItem" data-url="/api/v1/section/delete" data-target="' . $section->id . '">
                             <i class="fas fa-trash"></i>
                             </button>
                         </div>';
