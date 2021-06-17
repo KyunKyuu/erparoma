@@ -1,6 +1,5 @@
 const data = [
     {name:'major_name', data:'major_name'},
-    {name:'status', data:'status'},
     {name:'created_by', data:'created_by'},
     {name:'created_at', data:'created_at'},
     {name:'buttons', data:'buttons'},
@@ -16,5 +15,5 @@ const callback = {
 }
 
 $(document).ready(function() {
-    Table({table:'#table', data:data, url:'/api/v1/major/get', callbackButton:callback})
+    Table({table:'#table', data:data, url:'/api/v1/majors/get', callbackButton:callback})
 })

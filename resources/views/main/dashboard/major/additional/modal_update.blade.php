@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-12">
-                    <form class="updateForm" data-url="/api/v1/major/update" data-method="post">
+                    <form class="updateForm" data-url="/api/v1/majors/update" data-method="post">
                         <div class="form-group">
                             <label for="major_name" class="text-capitalize">major Name</label>
                             <input type="text" name="major_name" class="form-control" required>

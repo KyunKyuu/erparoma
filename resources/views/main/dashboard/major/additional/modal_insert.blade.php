@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-12">
-                    <form class="insertForm" data-url="/api/v1/major/insert" data-method="post">
+                    <form class="insertForm" data-url="/api/v1/majors/insert" data-method="post">
                         <div class="form-group">
                             <label for="major_name" class="text-capitalize">major Name</label>
                             <input type="text" name="major_name" class="form-control" required>

@@ -18,7 +18,6 @@
                         <thead>
                             <tr>
                                 <th style="width:10%">Major</th>
-                                <th>Status</th>
                                 <th>Created By</th>
                                 <th>Created At</th>
                                 <th>Action</th>

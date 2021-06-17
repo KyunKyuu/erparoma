@@ -63,7 +63,7 @@ Route::prefix('api/v1')->group(function () {
         Route::put('change', [ApiMenuController::class, 'change'])->name('menu.change');
     });
 
-    Route::prefix('major')->group(function () {
+    Route::prefix('majors')->group(function () {
         Route::get('get', [ApiMajorController::class, 'get'])->name('major.get');
         Route::post('insert', [ApiMajorController::class, 'insert'])->name('major.insert');
         Route::delete('delete', [ApiMajorController::class, 'delete'])->name('major.delete');
@@ -71,7 +71,7 @@ Route::prefix('api/v1')->group(function () {
         Route::put('change', [ApiMajorController::class, 'change'])->name('major.change');
     });
 
-    Route::prefix('division')->group(function () {
+    Route::prefix('divisions')->group(function () {
         Route::get('get', [ApiDivisionControlleroller::class, 'get'])->name('division.get');
         Route::post('insert', [ApiDivisionControlleroller::class, 'insert'])->name('division.insert');
         Route::delete('delete', [ApiDivisionControlleroller::class, 'delete'])->name('division.delete');
