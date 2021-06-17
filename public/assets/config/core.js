@@ -186,13 +186,22 @@ function ToastHandling(data) {
             Toast.fire({
                 icon: 'error',
                 title: data.response.status + ' ' + data.response.statusText
+            }).then((result) => {
+                if (data.response.status == 419) {
+                    window.location.reload()
+                }
             })
         }else{
             Toast.fire({
                 icon: 'error',
-                title: data.response.responseJSON.message
+                title: data.response.status + ' ' + data.response.responseJSON.message
+            }).then((result) => {
+                if (data.response.status == 419) {
+                    window.location.reload()
+                }
             })
         }
+
     }else{
         if (data.response.message == "") {
             Toast.fire({
