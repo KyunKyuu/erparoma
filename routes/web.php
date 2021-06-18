@@ -4,12 +4,14 @@ use App\Http\Controllers\Api\DivisionController as ApiDivisionController;
 use App\Http\Controllers\Api\MajorController as ApiMajorController;
 use App\Http\Controllers\Api\MenuController as ApiMenuController;
 use App\Http\Controllers\Api\SectionController as ApiSectionController;
+use App\Http\Controllers\Api\SupplierTypeController as ApiSupplierTypeController;
 use App\Http\Controllers\Ex\IndexController;
 use App\Http\Controllers\Views\DivisionController;
 use App\Http\Controllers\Views\MajorController;
 use App\Http\Controllers\Views\MenuController;
 use App\Http\Controllers\Views\SectionController;
 use App\Http\Controllers\Views\UserController;
+use App\Http\Controllers\Views\SupplierTypeController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,7 @@ Route::prefix('master')->group(function () {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('section', [SectionController::class, 'index'])->name('section.index');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('supplier_types', [SupplierTypeController::class, 'index'])->name('supplier_type.index');
 });
 
 Route::prefix('hrd')->group(function () {
@@ -77,5 +80,13 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiDivisionController::class, 'delete'])->name('division.delete');
         Route::post('update', [ApiDivisionController::class, 'update'])->name('division.update');
         Route::put('change', [ApiDivisionController::class, 'change'])->name('division.change');
+    });
+
+    Route::prefix('supplier_types')->group(function () {
+        Route::get('get', [ApiSupplierTypeController::class, 'get'])->name('supplier_type.get');
+        Route::post('insert', [ApiSupplierTypeController::class, 'insert'])->name('supplier_type.insert');
+        Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
+        Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
+        Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
     });
 });
