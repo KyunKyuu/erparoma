@@ -16,4 +16,9 @@ class SupplierType extends Model
         'deleted_at'
     ];
     protected $dates = ['deleted_at'];
+
+    public function suppliers()
+    {
+        return $this->hasMany(Supplier::class,'id', 'type_id');
+    }
 }

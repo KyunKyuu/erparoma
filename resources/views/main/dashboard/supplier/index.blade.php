@@ -6,9 +6,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Supplier Type</h3>
+                    <h3 class="card-title">Data Supplier </h3>
                     <div class="card-tools">
-                        <a href="#" data-toggle="modal" data-target="#insertSupplierType" class="badge badge-primary p-2">Tambah
+                        <a href="#" data-toggle="modal" data-target="#insertSupplier" class="badge badge-primary p-2">Tambah
                             <i class="fas fa-plus"></i></a>
                     </div>
                 </div>
@@ -17,8 +17,11 @@
                     <table class="table table-hover " id="table">
                         <thead>
                             <tr>
-                                <th >Supplier Type</th>
-                                  <th>Status</th>
+                                <th>Supplier Name</th>
+                                <th>Type</th>
+                                <th>Address</th>
+                                <th>Telepon</th>
+                                <th>Status</th>
                                 <th>Created By</th>
                                 <th>Created At</th>
                                 <th>Action</th>
@@ -34,8 +37,8 @@
         </div>
     </div>
 
-    @include('main.dashboard.supplier_type.additional.modal_insert')
-    @include('main.dashboard.supplier_type.additional.modal_update')
+    @include('main.dashboard.supplier.additional.modal_insert')
+    @include('main.dashboard.supplier.additional.modal_update')
 
 
 @endsection

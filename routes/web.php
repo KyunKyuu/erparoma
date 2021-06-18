@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\MajorController as ApiMajorController;
 use App\Http\Controllers\Api\MenuController as ApiMenuController;
 use App\Http\Controllers\Api\SectionController as ApiSectionController;
 use App\Http\Controllers\Api\SupplierTypeController as ApiSupplierTypeController;
+use App\Http\Controllers\Api\SupplierController as ApiSupplierController;
 use App\Http\Controllers\Ex\IndexController;
 use App\Http\Controllers\Views\DivisionController;
 use App\Http\Controllers\Views\MajorController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Views\MenuController;
 use App\Http\Controllers\Views\SectionController;
 use App\Http\Controllers\Views\UserController;
 use App\Http\Controllers\Views\SupplierTypeController;
+use App\Http\Controllers\Views\SupplierController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,7 @@ Route::prefix('master')->group(function () {
     Route::get('section', [SectionController::class, 'index'])->name('section.index');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('supplier_types', [SupplierTypeController::class, 'index'])->name('supplier_type.index');
+    Route::get('suppliers', [SupplierController::class, 'index'])->name('supplier.index');
 });
 
 Route::prefix('hrd')->group(function () {
@@ -88,5 +91,13 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
         Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
         Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
+    });
+
+     Route::prefix('suppliers')->group(function () {
+        Route::get('get', [ApiSupplierController::class, 'get'])->name('supplier.get');
+        Route::post('insert', [ApiSupplierController::class, 'insert'])->name('supplier.insert');
+        Route::delete('delete', [ApiSupplierController::class, 'delete'])->name('supplier_.delete');
+        Route::post('update', [ApiSupplierController::class, 'update'])->name('supplier.update');
+        Route::put('change', [ApiSupplierController::class, 'change'])->name('supplier.change');
     });
 });
