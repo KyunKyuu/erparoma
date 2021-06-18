@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\Api\DivisionController as ApiDivisionController;
+use App\Http\Controllers\Api\EmployeeController as ApiEmployeeController;
 use App\Http\Controllers\Api\MajorController as ApiMajorController;
 use App\Http\Controllers\Api\MenuController as ApiMenuController;
 use App\Http\Controllers\Api\SectionController as ApiSectionController;
+use App\Http\Controllers\Api\SupplierTypeController as ApiSupplierTypeController;
+use App\Http\Controllers\Api\SupplierController as ApiSupplierController;
+use App\Http\Controllers\Api\ColorController as ApiColorController;
+use App\Http\Controllers\Api\ItemGroupController as ApiItemGroupController;
 use App\Http\Controllers\Ex\IndexController;
 use App\Http\Controllers\Views\DivisionController;
 use App\Http\Controllers\Views\EmployeeController;
@@ -87,5 +92,43 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiDivisionController::class, 'delete'])->name('division.delete');
         Route::post('update', [ApiDivisionController::class, 'update'])->name('division.update');
         Route::put('change', [ApiDivisionController::class, 'change'])->name('division.change');
+    });
+    Route::prefix('employee')->group(function () {
+        Route::get('get', [ApiEmployeeController::class, 'get'])->name('employee.get');
+        Route::post('insert', [ApiEmployeeController::class, 'insert'])->name('employee.insert');
+        Route::delete('delete', [ApiEmployeeController::class, 'delete'])->name('employee.delete');
+        Route::post('update', [ApiEmployeeController::class, 'update'])->name('employee.update');
+        Route::put('change', [ApiEmployeeController::class, 'change'])->name('employee.change');
+
+    Route::prefix('supplier_types')->group(function () {
+        Route::get('get', [Api\SupplierController@delete, 'get'])->name('supplier_type.get');
+        Route::post('insert', [ApiSupplierTypeController::class, 'insert'])->name('supplier_type.insert');
+        Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
+        Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
+        Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
+    });
+
+     Route::prefix('suppliers')->group(function () {
+        Route::get('get', [ApiSupplierController::class, 'get'])->name('supplier.get');
+        Route::post('insert', [ApiSupplierController::class, 'insert'])->name('supplier.insert');
+        Route::delete('delete', [ApiSupplierController::class, 'delete'])->name('supplier_.delete');
+        Route::post('update', [ApiSupplierController::class, 'update'])->name('supplier.update');
+        Route::put('change', [ApiSupplierController::class, 'change'])->name('supplier.change');
+    });
+
+      Route::prefix('colors')->group(function () {
+        Route::get('get', [ApiColorController::class, 'get'])->name('color.get');
+        Route::post('insert', [ApiColorController::class, 'insert'])->name('color.insert');
+        Route::delete('delete', [ApiColorController::class, 'delete'])->name('color_.delete');
+        Route::post('update', [ApiColorController::class, 'update'])->name('color.update');
+        Route::put('change', [ApiColorController::class, 'change'])->name('color.change');
+    });
+
+      Route::prefix('item_groups')->group(function () {
+        Route::get('get', [ApiItemGroupController::class, 'get'])->name('item_group.get');
+        Route::post('insert', [ApiItemGroupController::class, 'insert'])->name('item_group.insert');
+        Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
+        Route::post('update', [ApiItemGroupController::class, 'update'])->name('item_group.update');
+        Route::put('change', [ApiItemGroupController::class, 'change'])->name('item_group.change');
     });
 });
