@@ -11,6 +11,10 @@ use App\Http\Controllers\Views\MajorController;
 use App\Http\Controllers\Views\MenuController;
 use App\Http\Controllers\Views\SectionController;
 use App\Http\Controllers\Views\UserController;
+use App\Http\Controllers\Views\SupplierTypeController;
+use App\Http\Controllers\Views\SupplierController;
+use App\Http\Controllers\Views\ColorController;
+use App\Http\Controllers\Views\ItemGroupController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +39,10 @@ Route::prefix('master')->group(function () {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('section', [SectionController::class, 'index'])->name('section.index');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('supplier_types', [SupplierTypeController::class, 'index'])->name('supplier_type.index');
+    Route::get('suppliers', [SupplierController::class, 'index'])->name('supplier.index');
+    Route::get('colors', [ColorController::class, 'index'])->name('color.index');
+    Route::get('item_groups', [ItemGroupController::class, 'index'])->name('item_group.index');
 });
 
 Route::prefix('hrd')->group(function () {
@@ -79,12 +87,5 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiDivisionController::class, 'delete'])->name('division.delete');
         Route::post('update', [ApiDivisionController::class, 'update'])->name('division.update');
         Route::put('change', [ApiDivisionController::class, 'change'])->name('division.change');
-    });
-    Route::prefix('employee')->group(function () {
-        Route::get('get', [ApiDivisionController::class, 'get'])->name('employee.get');
-        Route::post('insert', [ApiDivisionController::class, 'insert'])->name('employee.insert');
-        Route::delete('delete', [ApiDivisionController::class, 'delete'])->name('employee.delete');
-        Route::post('update', [ApiDivisionController::class, 'update'])->name('employee.update');
-        Route::put('change', [ApiDivisionController::class, 'change'])->name('employee.change');
     });
 });
