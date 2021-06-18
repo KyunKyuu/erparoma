@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\SectionController as ApiSectionController;
 use App\Http\Controllers\Api\SupplierTypeController as ApiSupplierTypeController;
 use App\Http\Controllers\Api\SupplierController as ApiSupplierController;
 use App\Http\Controllers\Api\ColorController as ApiColorController;
+use App\Http\Controllers\Api\ItemGroupController as ApiItemGroupController;
 use App\Http\Controllers\Ex\IndexController;
 use App\Http\Controllers\Views\DivisionController;
 use App\Http\Controllers\Views\MajorController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Views\UserController;
 use App\Http\Controllers\Views\SupplierTypeController;
 use App\Http\Controllers\Views\SupplierController;
 use App\Http\Controllers\Views\ColorController;
+use App\Http\Controllers\Views\ItemGroupController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +45,7 @@ Route::prefix('master')->group(function () {
     Route::get('supplier_types', [SupplierTypeController::class, 'index'])->name('supplier_type.index');
     Route::get('suppliers', [SupplierController::class, 'index'])->name('supplier.index');
     Route::get('colors', [ColorController::class, 'index'])->name('color.index');
+    Route::get('item_groups', [ItemGroupController::class, 'index'])->name('item_group.index');
 });
 
 Route::prefix('hrd')->group(function () {
@@ -110,5 +113,13 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiColorController::class, 'delete'])->name('color_.delete');
         Route::post('update', [ApiColorController::class, 'update'])->name('color.update');
         Route::put('change', [ApiColorController::class, 'change'])->name('color.change');
+    });
+
+      Route::prefix('item_groups')->group(function () {
+        Route::get('get', [ApiItemGroupController::class, 'get'])->name('item_group.get');
+        Route::post('insert', [ApiItemGroupController::class, 'insert'])->name('item_group.insert');
+        Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
+        Route::post('update', [ApiItemGroupController::class, 'update'])->name('item_group.update');
+        Route::put('change', [ApiItemGroupController::class, 'change'])->name('item_group.change');
     });
 });
