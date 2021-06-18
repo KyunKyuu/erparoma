@@ -99,16 +99,17 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiEmployeeController::class, 'delete'])->name('employee.delete');
         Route::post('update', [ApiEmployeeController::class, 'update'])->name('employee.update');
         Route::put('change', [ApiEmployeeController::class, 'change'])->name('employee.change');
+    });
 
     Route::prefix('supplier_types')->group(function () {
-        Route::get('get', [Api\SupplierController@delete, 'get'])->name('supplier_type.get');
+        Route::get('get', [ApiSupplierTypeController::class, 'get'])->name('supplier_type.get');
         Route::post('insert', [ApiSupplierTypeController::class, 'insert'])->name('supplier_type.insert');
         Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
         Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
         Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
     });
 
-     Route::prefix('suppliers')->group(function () {
+    Route::prefix('suppliers')->group(function () {
         Route::get('get', [ApiSupplierController::class, 'get'])->name('supplier.get');
         Route::post('insert', [ApiSupplierController::class, 'insert'])->name('supplier.insert');
         Route::delete('delete', [ApiSupplierController::class, 'delete'])->name('supplier_.delete');
@@ -116,7 +117,7 @@ Route::prefix('api/v1')->group(function () {
         Route::put('change', [ApiSupplierController::class, 'change'])->name('supplier.change');
     });
 
-      Route::prefix('colors')->group(function () {
+    Route::prefix('colors')->group(function () {
         Route::get('get', [ApiColorController::class, 'get'])->name('color.get');
         Route::post('insert', [ApiColorController::class, 'insert'])->name('color.insert');
         Route::delete('delete', [ApiColorController::class, 'delete'])->name('color_.delete');
@@ -124,7 +125,7 @@ Route::prefix('api/v1')->group(function () {
         Route::put('change', [ApiColorController::class, 'change'])->name('color.change');
     });
 
-      Route::prefix('item_groups')->group(function () {
+    Route::prefix('item_groups')->group(function () {
         Route::get('get', [ApiItemGroupController::class, 'get'])->name('item_group.get');
         Route::post('insert', [ApiItemGroupController::class, 'insert'])->name('item_group.insert');
         Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
