@@ -28,6 +28,11 @@ $(document).ready(function() {
         })
     });
 
+    $('.select2').select2({
+        theme: 'bootstrap4',
+        placeholder:'Cari Data',
+    })
+
     $('form.insertForm').on('submit', function(e) {
         e.preventDefault();
         let url = $(this).data('url')
@@ -163,6 +168,36 @@ $(document).ready(function() {
             }
         })
     })
+
+    $('select#regency_id').select2({
+        placeholder:'Cari Area (Kota)',
+        theme:'bootstrap4'
+    }).on('select2:select', function(e) {
+        $('select#district_id').removeAttr('disabled');
+        setOptionDistrict($(this).val());
+    });
+
+    $('select#province_id').select2({
+        placeholder:'Cari Area (Provinsi)',
+        theme:'bootstrap4'
+    }).on('select2:select', function(e) {
+        $('select#regency_id').removeAttr('disabled');
+        setOptionRegency($(this).val());
+    });
+
+    $('select#district_id').select2({
+        placeholder:'Cari Area (Kecamatan)',
+        theme:'bootstrap4'
+    }).on('select2:select', function(e) {
+        $('select#village_id').removeAttr('disabled');
+        setOptionVillage($(this).val());
+    });
+
+    $('select#village_id').select2({
+        placeholder:'Cari Area (Kelurahan)',
+        theme:'bootstrap4'
+    }).on('select2:select', function(e) {
+    });
 
 
 })
@@ -446,3 +481,54 @@ function SweetQuestions(data){
     })
 }
 
+
+function setOptionRegency(id) {
+    let html = ''
+    $.ajax({
+        url:'/api/v1/area/regency/get?id='+id,
+        success:res=>{
+            res.value.forEach(item  => {
+                html += `<option value="${item.id}">${item.name}</option>`
+            });
+
+            $('select#regency_id').html(html)
+        },
+        error:err=>{
+            ToastHandling({type:'error', response:err})
+        }
+    })
+}
+
+function setOptionDistrict(id) {
+    let html = ''
+    $.ajax({
+        url:'/api/v1/area/district/get?id='+id,
+        success:res=>{
+            res.value.forEach(item  => {
+                html += `<option value="${item.id}">${item.name}</option>`
+            });
+
+            $('select#district_id').html(html)
+        },
+        error:err=>{
+            ToastHandling({type:'error', response:err})
+        }
+    })
+}
+
+function setOptionVillage(id) {
+    let html = ''
+    $.ajax({
+        url:'/api/v1/area/village/get?id='+id,
+        success:res=>{
+            res.value.forEach(item  => {
+                html += `<option value="${item.id}">${item.name}</option>`
+            });
+
+            $('select#village_id').html(html)
+        },
+        error:err=>{
+            ToastHandling({type:'error', response:err})
+        }
+    })
+}

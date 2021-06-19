@@ -18,8 +18,13 @@
                         <thead>
                             <tr>
                                 <th style="width:10%">Nama</th>
-                                <th>Created By</th>
-                                <th>Created At</th>
+                                <th>Foto</th>
+                                <th>Religion</th>
+                                <th>Email</th>
+                                <th>Telepon</th>
+                                <th>Cabang</th>
+                                <th>Divisi</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

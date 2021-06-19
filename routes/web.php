@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AreaController as ApiAreaController;
 use App\Http\Controllers\Api\DivisionController as ApiDivisionController;
 use App\Http\Controllers\Api\EmployeeController as ApiEmployeeController;
 use App\Http\Controllers\Api\MajorController as ApiMajorController;
@@ -131,5 +132,17 @@ Route::prefix('api/v1')->group(function () {
         Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
         Route::post('update', [ApiItemGroupController::class, 'update'])->name('item_group.update');
         Route::put('change', [ApiItemGroupController::class, 'change'])->name('item_group.change');
+    });
+
+    Route::prefix('area')->group(function () {
+        Route::prefix('regency')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'regency_get'])->name('regency.get');
+        });
+        Route::prefix('district')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'district_get'])->name('district.get');
+        });
+        Route::prefix('village')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'village_get'])->name('village.get');
+        });
     });
 });

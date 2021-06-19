@@ -1,6 +1,5 @@
 <!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet"
-href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
 <!-- Ionicons -->
@@ -28,5 +27,7 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&d
 <link rel="stylesheet" href="/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 {{-- Bootstrap Toggle --}}
-
 <link rel="stylesheet" href="/assets/plugins/bootstrap-toggle/css/bootstrap-toggle.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
