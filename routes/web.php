@@ -146,56 +146,56 @@ Route::prefix('api/v1')->group(function () {
         Route::post('update', [ApiCustomerTypeController::class, 'update'])->name('customer_type.update');
         Route::put('change', [ApiCustomerTypeController::class, 'change'])->name('customer_type.change');
     });
-});
 
-Route::prefix('employee')->group(function () {
-    Route::get('get', [ApiEmployeeController::class, 'get'])->name('employee.get');
-    Route::post('insert', [ApiEmployeeController::class, 'insert'])->name('employee.insert');
-    Route::delete('delete', [ApiEmployeeController::class, 'delete'])->name('employee.delete');
-    Route::post('update', [ApiEmployeeController::class, 'update'])->name('employee.update');
-    Route::put('change', [ApiEmployeeController::class, 'change'])->name('employee.change');
-});
-
-Route::prefix('supplier_types')->group(function () {
-    Route::get('get', [ApiSupplierTypeController::class, 'get'])->name('supplier_type.get');
-    Route::post('insert', [ApiSupplierTypeController::class, 'insert'])->name('supplier_type.insert');
-    Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
-    Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
-    Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
-});
-
-Route::prefix('suppliers')->group(function () {
-    Route::get('get', [ApiSupplierController::class, 'get'])->name('supplier.get');
-    Route::post('insert', [ApiSupplierController::class, 'insert'])->name('supplier.insert');
-    Route::delete('delete', [ApiSupplierController::class, 'delete'])->name('supplier_.delete');
-    Route::post('update', [ApiSupplierController::class, 'update'])->name('supplier.update');
-    Route::put('change', [ApiSupplierController::class, 'change'])->name('supplier.change');
-});
-
-Route::prefix('colors')->group(function () {
-    Route::get('get', [ApiColorController::class, 'get'])->name('color.get');
-    Route::post('insert', [ApiColorController::class, 'insert'])->name('color.insert');
-    Route::delete('delete', [ApiColorController::class, 'delete'])->name('color_.delete');
-    Route::post('update', [ApiColorController::class, 'update'])->name('color.update');
-    Route::put('change', [ApiColorController::class, 'change'])->name('color.change');
-});
-
-Route::prefix('item_groups')->group(function () {
-    Route::get('get', [ApiItemGroupController::class, 'get'])->name('item_group.get');
-    Route::post('insert', [ApiItemGroupController::class, 'insert'])->name('item_group.insert');
-    Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
-    Route::post('update', [ApiItemGroupController::class, 'update'])->name('item_group.update');
-    Route::put('change', [ApiItemGroupController::class, 'change'])->name('item_group.change');
-});
-
-Route::prefix('area')->group(function () {
-    Route::prefix('regency')->group(function () {
-        Route::get('get', [ApiAreaController::class, 'regency_get'])->name('regency.get');
+    Route::prefix('employee')->group(function () {
+        Route::get('get', [ApiEmployeeController::class, 'get'])->name('employee.get');
+        Route::post('insert', [ApiEmployeeController::class, 'insert'])->name('employee.insert');
+        Route::delete('delete', [ApiEmployeeController::class, 'delete'])->name('employee.delete');
+        Route::post('update', [ApiEmployeeController::class, 'update'])->name('employee.update');
+        Route::put('change', [ApiEmployeeController::class, 'change'])->name('employee.change');
     });
-    Route::prefix('district')->group(function () {
-        Route::get('get', [ApiAreaController::class, 'district_get'])->name('district.get');
+
+    Route::prefix('supplier_types')->group(function () {
+        Route::get('get', [ApiSupplierTypeController::class, 'get'])->name('supplier_type.get');
+        Route::post('insert', [ApiSupplierTypeController::class, 'insert'])->name('supplier_type.insert');
+        Route::delete('delete', [ApiSupplierTypeController::class, 'delete'])->name('supplier_type.delete');
+        Route::post('update', [ApiSupplierTypeController::class, 'update'])->name('supplier_type.update');
+        Route::put('change', [ApiSupplierTypeController::class, 'change'])->name('supplier_type.change');
     });
-    Route::prefix('village')->group(function () {
-        Route::get('get', [ApiAreaController::class, 'village_get'])->name('village.get');
+
+    Route::prefix('suppliers')->group(function () {
+        Route::get('get', [ApiSupplierController::class, 'get'])->name('supplier.get');
+        Route::post('insert', [ApiSupplierController::class, 'insert'])->name('supplier.insert');
+        Route::delete('delete', [ApiSupplierController::class, 'delete'])->name('supplier_.delete');
+        Route::post('update', [ApiSupplierController::class, 'update'])->name('supplier.update');
+        Route::put('change', [ApiSupplierController::class, 'change'])->name('supplier.change');
+    });
+
+    Route::prefix('colors')->group(function () {
+        Route::get('get', [ApiColorController::class, 'get'])->name('color.get');
+        Route::post('insert', [ApiColorController::class, 'insert'])->name('color.insert');
+        Route::delete('delete', [ApiColorController::class, 'delete'])->name('color_.delete');
+        Route::post('update', [ApiColorController::class, 'update'])->name('color.update');
+        Route::put('change', [ApiColorController::class, 'change'])->name('color.change');
+    });
+
+    Route::prefix('item_groups')->group(function () {
+        Route::get('get', [ApiItemGroupController::class, 'get'])->name('item_group.get');
+        Route::post('insert', [ApiItemGroupController::class, 'insert'])->name('item_group.insert');
+        Route::delete('delete', [ApiItemGroupController::class, 'delete'])->name('item_group_.delete');
+        Route::post('update', [ApiItemGroupController::class, 'update'])->name('item_group.update');
+        Route::put('change', [ApiItemGroupController::class, 'change'])->name('item_group.change');
+    });
+
+    Route::prefix('area')->group(function () {
+        Route::prefix('regency')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'regency_get'])->name('regency.get');
+        });
+        Route::prefix('district')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'district_get'])->name('district.get');
+        });
+        Route::prefix('village')->group(function () {
+            Route::get('get', [ApiAreaController::class, 'village_get'])->name('village.get');
+        });
     });
 });
