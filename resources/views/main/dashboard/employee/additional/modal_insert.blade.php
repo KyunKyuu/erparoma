@@ -45,17 +45,29 @@
                         <div class="form-group row">
                             <div class="col">
                                 <label for="major_id" class="text-capitalize">Jabatan</label>
-                                <select name="major_id" id="major_id" class="form-control">
+                                <select name="major_id" id="major_id" class="form-control select2">
+                                    <option value selected disabled></option>
+                                    @foreach ($majors as $item)
+                                        <option value="{{ $item->id }}">{{ $item->major_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col">
                                 <label for="division_id" class="text-capitalize">Divisi</label>
-                                <select name="division_id" id="division_id" class="form-control">
+                                <select name="division_id" id="division_id" class="form-control select2">
+                                    <option value selected disabled></option>
+                                    @foreach ($divisions as $item)
+                                        <option value="{{ $item->id }}">{{ $item->division_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col">
                                 <label for="branch_id" class="text-capitalize">Cabang</label>
-                                <select name="branch_id" id="branch_id" class="form-control">
+                                <select name="branch_id" id="branch_id" class="form-control select2">
+                                    <option value selected disabled></option>
+                                    @foreach ($majors as $item)
+                                        <option value="{{ $item->id }}">{{ $item->major_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -64,6 +76,17 @@
                             <div class="col">
                                 <label for="clasification_id" class="text-capitalize">Klasifikasi</label>
                                 <select name="clasification_id" id="clasification_id" class="form-control">
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="religion" class="text-capitalize">Agama</label>
+                                <select name="religion" id="religion" class="form-control select2">
+                                    <option selected value disabled></option>
+                                    <option value="islam">Islam</option>
+                                    <option value="kristen">Kristen</option>
+                                    <option value="katolik">Katolik</option>
+                                    <option value="hindu">Hindu</option>
+                                    <option value="buddha">Buddha</option>
                                 </select>
                             </div>
                         </div>
