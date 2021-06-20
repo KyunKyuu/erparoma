@@ -52,13 +52,15 @@
 <script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- DataTables  & Plugins -->
 <script src="/assets/plugins/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
-
-<script src="/assets/config/{{request()->segment(2)}}/script.js"></script>
+<!-- Select2 -->
+<script src="/assets/plugins/select2/js/select2.full.min.js"></script>
+{{-- Assets --}}
+<script src="/assets/config/{{ request()->segment(2) }}/script.js"></script>
 
 
 <script>
-// Untuk Uji coba script
-
+    // Untuk Uji coba script
 
 </script>
