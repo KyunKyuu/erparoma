@@ -16,10 +16,10 @@ class CreateSuppliersTable extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->string('supplier_name');
-            
+
             $table->string('address');
             $table->string('telepon');
-            $table->enum('status', [0,1]);
+            $table->enum('status', [0, 1]);
             $table->char('created_by');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();

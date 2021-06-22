@@ -12,22 +12,18 @@
         <div class="modal-body">
             <div class="col-md-12">
                 <form class="updateForm" data-url="/api/v1/branch/update" data-method="post">
-                    <div class="form-group">
-                        <label class="text-capitalize" for="type_id">Cabang</label>
-                        <select name="type_id" class="form-control" required >
-                            <option value disabled selected>== Pilih Cabang ==</option>
-                            @foreach ($branch as $item)
-                                <option value="{{$item->id}}">{{$item->branch_name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
                   <div class="form-group">
                       <label class="text-capitalize" for="branch_name">Nama Cabang</label>
                       <input type="text" name="branch_name" class="form-control" required >
                   </div>
                   <div class="form-group">
-                      <label class="text-capitalize" for="type_id">Type id</label>
-                      <input type="number" name="type_id" class="form-control"  >
+                      <label class="text-capitalize" for="type_id">Branch Type</label>
+                      <select class="form-control" name="type_id" required="">
+                        <option selected disabled="">== Select Branch Type ==</option>
+                          @foreach($Branch as $type)
+                          <option value="{{$type->id}}">{{$type->type_name}}</option>
+                          @endforeach
+                      </select>
                   </div>
                   <div class="form-group">
                       <label class="text-capitalize" for="email">Email</label>

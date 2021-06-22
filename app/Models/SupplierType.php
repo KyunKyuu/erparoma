@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SupplierType extends Model
 {
-     use SoftDeletes;
+    use SoftDeletes;
     protected $table = 'supplier_types';
     protected $fillable = [
         'type_name',
@@ -19,6 +19,6 @@ class SupplierType extends Model
 
     public function suppliers()
     {
-        return $this->hasMany(Supplier::class,'id', 'type_id');
+        return $this->hasMany(Supplier::class, 'id', 'type_id');
     }
 }

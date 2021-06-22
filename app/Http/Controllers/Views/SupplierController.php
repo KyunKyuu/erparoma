@@ -11,7 +11,7 @@ class SupplierController extends Controller
 {
     public function index()
     {
-        $supplierTypes = SupplierType::where('status','1')->get();
+        $supplierTypes = SupplierType::where('status', '1')->get();
         return view('main.dashboard.supplier.index', compact('supplierTypes'));
     }
 }
