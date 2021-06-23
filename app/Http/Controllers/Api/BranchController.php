@@ -34,6 +34,14 @@ class BranchController extends Controller
             ->editColumn('created_at', function ($branch) {
                 return date('d-M-Y H:i', strtotime($branch->created_at));
             })
+            ->editColumn('type_id', function ($branch) {
+                return $branch->branch->type_name;
+            })
+            ->addColumn('status', function ($branch) {
+                $checked = $branch->status > 0 ? 'checked' : '';
+                $status = $branch->status > 0 ? 0 : 1;
+                return '<input type="checkbox" class="input-toggle" ' . $checked . ' data-id="' . $branch->id . '" data-value="' . $status . '" data-url="/api/v1/branch/change" data-method="PUT"> ';
+            })
             ->rawColumns(['buttons', 'status'])
             ->make(true);
     }
