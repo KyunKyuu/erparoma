@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\CustomerTypeController as ApiCustomerTypeController
 
 use App\Http\Controllers\Api\EmployeeController as ApiEmployeeController;
 
+use App\Http\Controllers\Api\CompanyProfileController as ApiCompanyProfileController;
 use App\Http\Controllers\Api\MajorController as ApiMajorController;
 use App\Http\Controllers\Api\MenuController as ApiMenuController;
 use App\Http\Controllers\Api\SectionController as ApiSectionController;
@@ -34,6 +35,7 @@ use App\Http\Controllers\Views\SupplierTypeController;
 use App\Http\Controllers\Views\SupplierController;
 use App\Http\Controllers\Views\ColorController;
 use App\Http\Controllers\Views\ItemGroupController;
+use App\Http\Controllers\Views\CompanyProfileController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -68,6 +70,8 @@ Route::prefix('master')->group(function () {
     Route::get('suppliers', [SupplierController::class, 'index'])->name('supplier.index');
     Route::get('colors', [ColorController::class, 'index'])->name('color.index');
     Route::get('item_groups', [ItemGroupController::class, 'index'])->name('item_group.index');
+
+    Route::get('company_profiles', [CompanyProfileController::class, 'index'])->name('company_profile.index');
 });
 
 Route::prefix('hrd')->group(function () {
@@ -197,5 +201,13 @@ Route::prefix('api/v1')->group(function () {
         Route::prefix('village')->group(function () {
             Route::get('get', [ApiAreaController::class, 'village_get'])->name('village.get');
         });
+    });
+
+    Route::prefix('company_profiles')->group(function () {
+        Route::get('get', [ApiCompanyProfileController::class, 'get'])->name('company_profile.get');
+        Route::post('insert', [ApiCompanyProfileController::class, 'insert'])->name('company_profile.insert');
+        Route::delete('delete', [ApiCompanyProfileController::class, 'delete'])->name('company_profile_.delete');
+        Route::post('update', [ApiCompanyProfileController::class, 'update'])->name('company_profile.update');
+        Route::put('change', [ApiCompanyProfileController::class, 'change'])->name('company_profile.change');
     });
 });
