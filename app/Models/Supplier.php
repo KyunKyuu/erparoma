@@ -20,9 +20,8 @@ class Supplier extends Model
     ];
     protected $dates = ['deleted_at'];
 
-     public function type()
+    public function type()
     {
-        return $this->belongsTo(SupplierType::class,'type_id')->withTrashed();
+        return $this->belongsTo(SupplierType::class, 'type_id')->withTrashed();
     }
-
 }
