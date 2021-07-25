@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Api\AreaController as ApiAreaController;
 use App\Http\Controllers\Api\DivisionController as ApiDivisionController;
 use App\Http\Controllers\Api\BranchController as ApiBranchController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Api\BrandController as ApiBrandController;
 use App\Http\Controllers\Api\CustomerTypeController as ApiCustomerTypeController;
 
 use App\Http\Controllers\Api\EmployeeController as ApiEmployeeController;
+
 
 use App\Http\Controllers\Api\CompanyProfileController as ApiCompanyProfileController;
 use App\Http\Controllers\Api\MajorController as ApiMajorController;
@@ -101,6 +103,8 @@ Route::prefix('api/v1')->group(function () {
         Route::post('update', [ApiMenuController::class, 'update'])->name('menu.update');
         Route::put('change', [ApiMenuController::class, 'change'])->name('menu.change');
     });
+
+
 
     Route::prefix('majors')->group(function () {
         Route::get('get', [ApiMajorController::class, 'get'])->name('major.get');
@@ -206,8 +210,9 @@ Route::prefix('api/v1')->group(function () {
     Route::prefix('company_profiles')->group(function () {
         Route::get('get', [ApiCompanyProfileController::class, 'get'])->name('company_profile.get');
         Route::post('insert', [ApiCompanyProfileController::class, 'insert'])->name('company_profile.insert');
-        Route::delete('delete', [ApiCompanyProfileController::class, 'delete'])->name('company_profile_.delete');
+        Route::delete('delete', [ApiCompanyProfileController::class, 'delete'])->name('company_profile.delete');
         Route::post('update', [ApiCompanyProfileController::class, 'update'])->name('company_profile.update');
         Route::put('change', [ApiCompanyProfileController::class, 'change'])->name('company_profile.change');
     });
+   
 });

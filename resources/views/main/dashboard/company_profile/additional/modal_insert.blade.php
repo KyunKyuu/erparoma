@@ -11,10 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-12">
-                    <form class="insertForm" data-url="/api/v1/company_profiles/insert" data-method="post" enctype="multipart/form-data">
-                     <div class="form-group row">
-                        <img class="img-fluid " src="" style="max-height: 150px;width:480px;" id="image-preview">
-                    </div>
+                <form class="insertForm" data-url="/api/v1/company_profiles/insert" data-method="post" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Photo Company</label>
                            
@@ -153,6 +150,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
+           
         </div>
     </div>
 </div>

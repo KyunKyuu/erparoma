@@ -26,10 +26,6 @@ class CreateCompanyProfile extends Migration
             $table->char('fax');
             $table->char('postal_code');
             $table->char('country');
-            $table->integer('province_id');
-            $table->integer('regency_id');
-            $table->integer('district_id');
-            $table->integer('village_id');
             $table->char('bank_name');
             $table->char('bank_rekening_number');
             $table->string('bank_owner');

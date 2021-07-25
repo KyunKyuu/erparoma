@@ -9,7 +9,7 @@
     {name:'telepon_1', data:'telepon_1'},
     {name:'telepon_2', data:'telepon_2'},
     {name:'fax', data:'fax'},
-    {name: 'postal_code', data: 'postal_code'},
+    {name:'postal_code', data: 'postal_code'},
     {name:'country', data:'country'},
     {name:'province_id', data:'province_id'},
     {name:'regency_id', data:'regency_id'},

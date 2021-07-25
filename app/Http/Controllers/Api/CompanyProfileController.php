@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{CompanyProfile};
+use App\Models\CompanyProfile;
 use Yajra\DataTables\DataTables;
-class CompanyProfielController extends Controller
+class CompanyProfileController extends Controller
 {
       //
     public function get()
@@ -18,7 +18,8 @@ class CompanyProfielController extends Controller
             }
             return response()->json(['status' => 'error', 'message' => 'Data tidak ditemukan', 'value' => $data], 404);
         }
-       $company = CompanyProfile::all();
+        
+        $company = CompanyProfile::all();
         return DataTables::of($company)
             ->addColumn('buttons', function ($company) {
                 return '<div class="btn-group">
@@ -33,23 +34,38 @@ class CompanyProfielController extends Controller
             ->editColumn('created_at', function ($company) {
                 return date('d-M-Y H:i', strtotime($company->created_at));
             })
+            ->editColumn('province_id', function ($company) {
+                return $company->province->name;
+            })
+            ->editColumn('regency_id', function ($company) {
+                return $company->regency->name;
+            })
+            ->editColumn('district_id', function ($company) {
+                return $company->district->name;
+            })
+            ->editColumn('village_id', function ($company) {
+                return $company->village->name;
+            })
+            ->editColumn('photo', function ($company) {
+                return $company->photo();
+            })
              ->addColumn('status', function ($company) {
                 $checked = $company->status > 0 ? 'checked' : '';
                 $status = $company->status > 0 ? 0 : 1;
                 return '<input type="checkbox" class="input-toggle" ' . $checked . ' data-id="' . $company->id . '" data-value="' . $status . '" data-url="/api/v1/company_profiles/change" data-method="PUT"> ';
             })
-            ->rawColumns(['buttons', 'status'])
+            ->rawColumns(['buttons', 'status', 'photo'])
             ->make(true);
     }
 
     public function insert(Request $request)
     {
-
+    
         $check = CompanyProfile::where('name', $request->name);
         if ($check->count() > 0) {
             return response()->json(['message' => 'Gagal, Nama Company telah ada. Coba lagi!', 'status' => 'error'], 500);
         }
-        $poho = $request->file('photo')->store('images/company');
+        $photo = $request->file('photo')->store('images/company');
         $request->request->add(['created_by' => 'admin', 'photo' =>  $photo]);
 
         CompanyProfile::create($request->all());

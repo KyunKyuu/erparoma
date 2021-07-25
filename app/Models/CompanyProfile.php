@@ -35,5 +35,31 @@ class CompanyProfile extends Model
     ];
     protected $dates = ['deleted_at'];
 
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function regency()
+    {
+        return $this->belongsTo(Regency::class, 'regency_id');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
+    }
+
+
+    public function village()
+    {
+        return $this->belongsTo(Village::class, 'village_id');
+    }
+
+
+    public function photo()
+    {
+        return !$this->photo ? asset('no-image.jpg') : asset("storage/" . $this->photo);
+    }
     
 }

@@ -16,7 +16,6 @@ class CreateBranch extends Migration
         Schema::create('branch', function (Blueprint $table) {
             $table->id();
             $table->string('branch_name');
-            $table->foreignId('type_id');
             $table->string('email');
             $table->char('telepon');
             $table->enum('status', [1, 0]);
